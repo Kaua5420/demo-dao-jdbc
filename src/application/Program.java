@@ -14,11 +14,9 @@ public class Program {
 		
 		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		
-		Department obj = new Department(1, "Books");
-		
-		Seller seller = new Seller(34, "Sarah", "sasasa45@gmail.com", LocalDate.parse("22/01/2003", fmt), 4200.0, obj);
-		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
+		
+		Seller seller = sellerDao.findById(3);
 		
 		System.out.println(seller);
 		
