@@ -1,5 +1,6 @@
 package application;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -32,6 +33,11 @@ public class Program {
 		for (Seller obj : list) {
 			System.out.println(obj);
 		}
+		System.out.println("\n=== TEST 4: seller insert ===");
+		Seller newSeller = new Seller(null, "Benny", "benbenben333@gmail.com", LocalDate.parse("23/05/2002", fmt), 3600.0, department);
+		sellerDao.insert(newSeller);
+		System.out.println("Inserted! New id = " + newSeller.getId());
+		}
 	}
 
-}
+
